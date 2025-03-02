@@ -23,6 +23,7 @@ const cartItems = [];
 
 const products = document.querySelector("#products");
 const cart = document.querySelector(".list");
+cart.classList.add('right')
 const totalBtn = document.querySelector("#cart>p");
 let total = 0;
 
@@ -93,8 +94,10 @@ function onInIt() {
     });
 
     minus.innerText = "-";
+    minus.classList.add('minPls');
     noOfItens.innerText = item.quantity;
     plus.innerText = "+";
+    plus.classList.add('minPls');
 
     addbtn.append(minus, noOfItens, plus);
     addbtn.classList.add("sp");
