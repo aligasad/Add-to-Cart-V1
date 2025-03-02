@@ -3,7 +3,7 @@ const arrProduct = [
     id: 1,
     quantity: 0,
     name: "product-1",
-    price: 100,
+    price: 145,
   },
   {
     id: 2,
@@ -15,7 +15,19 @@ const arrProduct = [
     id: 3,
     quantity: 0,
     name: "product-3",
-    price: 300,
+    price: 332,
+  },
+  {
+    id: 4,
+    quantity: 0,
+    name: "product-4",
+    price: 450,
+  },
+  {
+    id: 5,
+    quantity: 0,
+    name: "product-5",
+    price: 450,
   },
 ];
 
@@ -34,8 +46,8 @@ function updatePrice() {
     let p = arrProduct.find((p) => p.id == id);
     total += (p.price * p.quantity);
   });
-  totalBtn.innerHTML = 'Total: '+total;
-  
+  totalBtn.innerHTML = 'Total: '+ total;
+  totalBtn.classList.add('tBtn');
 }
 
 function addProduct(item) {
@@ -74,6 +86,12 @@ function onInIt() {
     let noOfItens = document.createElement("span");
     let plus = document.createElement("span");
 
+    minus.innerText = "-";
+    minus.classList.add('minPls');
+    noOfItens.innerText = item.quantity;
+    plus.innerText = "+";
+    plus.classList.add('minPls');
+
     plus.addEventListener("click", () => {
       arrProduct.find((p) => p.id == item.id).quantity++;
       noOfItens.innerText = item.quantity;
@@ -93,11 +111,7 @@ function onInIt() {
       }
     });
 
-    minus.innerText = "-";
-    minus.classList.add('minPls');
-    noOfItens.innerText = item.quantity;
-    plus.innerText = "+";
-    plus.classList.add('minPls');
+    
 
     addbtn.append(minus, noOfItens, plus);
     addbtn.classList.add("sp");
